@@ -1,0 +1,13 @@
+#! /bin/bash
+
+if [ "$#" = "2" -a -f "$1" -a -f "$2" ]; then
+	echo -e "\033[1;33mOriginal\033[m"
+	echo `grep "Initialization time" $1`
+	echo `grep "Execution time" $1`
+	echo
+	echo -e "\033[1;33mNew\033[m"
+	echo `grep "Initialization time" $2`
+	echo `grep "Execution time" $2`
+else
+	echo "Usage: $0 <original> <new>"
+fi
